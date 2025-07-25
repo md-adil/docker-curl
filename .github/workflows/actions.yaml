@@ -39,7 +39,7 @@ jobs:
         id: build
         with:
           platforms: ${{ matrix.platform }}
-          tags: ${{ env.IMAGE }}:${{ github.run_number }}-${{ matrix.arch }}
+          tags: ${{ env.IMAGE }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
 
       - name: Details
