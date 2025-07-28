@@ -16,9 +16,7 @@ jobs:
         include:
           - arch: amd64
             runner: ubuntu-latest
-            platform: linux/amd64
           - arch: arm64
-            platform: linux/arm64
             runner: ubuntu-24.04-arm
     steps:
       - name: Checkout
@@ -38,7 +36,6 @@ jobs:
         uses: docker/build-push-action@v6
         id: build
         with:
-          platforms: ${{ matrix.platform }}
           tags: ${{ env.IMAGE }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
 
